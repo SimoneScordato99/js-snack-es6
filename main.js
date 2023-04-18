@@ -81,8 +81,64 @@ let squadre = [
     { nome: 'milan', punti: 0 , falli: 0 },
     { nome: 'palermo', punti: 0 , falli: 0 },
 ]
+
 console.log(squadre)
+
 function random(){
     return Math.floor(Math.random() * 100) +1;
 }
 console.log(random())
+
+let risultati = squadre.map((element) => {
+    return element = {nome: element.nome, punti: random(), falli: random()}
+})
+let { nome , falli} = risultati
+console.log(risultati)
+
+let menoRisultati = risultati.map((element) => {
+    return element = {nome: element.nome, falli: element.falli}
+})
+console.log(menoRisultati)
+
+
+
+
+/*
+Snack 3
+Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+l'array egnerato da parte vostra dovrà essere di ad esempio nomi o cose: ['alberto', 'michele','angelo','simone']
+se come numeri ad esemio ho 2 e 4 devo inserire in un array nuovo l'elemento in posizione 3
+La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+Usiamo i nuovi metodi degli array foreach o filter.
+
+
+dato un array e due numeri, restituire un array con tutti gli elementi tra gli estremi (estremi esclusi)
+cioè dato [a,b,c,d,e] e i numeri 1 4
+restituirò [c,d], perchè c e d hanno indice 2 e 3 (compresi tra 1 e 4)
+la gabola è l'usare la filter
+*/
+
+let array = [
+    'gennaio',
+    'febbraio',
+    'marzo',
+    'aprile',
+    'maggio',
+    'giugno',
+    'luglio',
+    'agosto',
+    'settembre',
+    'ottobre',
+    'novembre',
+    'dicembre'
+]
+let min = 3;
+let max = 7;
+console.log( array )
+
+let arrayNuovo = array.filter((element,index) => {
+    if(index > min && index < max ){
+        return element
+    } 
+})
+console.log(arrayNuovo)
